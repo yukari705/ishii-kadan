@@ -41,8 +41,8 @@ br.sp {
 .header {
     width: 100%;
     height: 80px;
-    position: relative;
-    background: #000;
+    position: fixed;
+    z-index: 99;
 
     &__inner {
         width: 100%;
@@ -102,6 +102,44 @@ br.sp {
 
     p {
         font-size: 16px;
+    }
+}
+
+/* MAIN
+----------------------------- */
+.main {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        padding-top: 56.2%;
+        content: '';
+    }
+
+    &__slogan {
+        position: absolute;
+        top: 33%;
+        right: 25%;
+        z-index: 90;
+        color: #FFFFFF;
+        font-size: 34px;
+        letter-spacing: 0.6rem;
+        line-height: 2.5;
+        writing-mode: vertical-rl;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
     }
 }
 
