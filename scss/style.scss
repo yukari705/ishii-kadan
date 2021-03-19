@@ -57,6 +57,10 @@ br.sp {
         display: flex;
         align-items: center;
 
+        &:hover {
+            opacity: .7;
+        }
+
         &--img {
             width: 40px;
             height: 40px;
@@ -77,6 +81,10 @@ br.sp {
         a {
             margin-left: 30px;
             color: #FFFFFF;
+
+            &:hover {
+                opacity: .7;
+            }
         }
     }
 }
