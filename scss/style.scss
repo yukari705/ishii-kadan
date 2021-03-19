@@ -138,8 +138,32 @@ br.sp {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+        opacity: 0;
+        animation: zoom-in 15s 0s infinite linear;
 
+        &:nth-of-type(2) {
+            animation-delay: 5s;
+        }
 
+        &:nth-of-type(3) {
+            animation-delay: 10s;
+        }
+
+        @keyframes zoom-in {
+            0% {
+                opacity: 0;
+            }
+            7% {
+                opacity: 1;
+            }
+            33% {
+                opacity: 1;
+            }
+            40% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+        }
     }
 }
 
