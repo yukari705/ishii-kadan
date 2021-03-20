@@ -365,9 +365,9 @@ br.sp {
     }
 
     &__item {
+        width: 48%;
         margin-bottom: 20px;
         padding: 15px 10px;
-        flex: 0 0 48%;
         display: flex;
         justify-content: space-between;
         background: #F6F6F6;
@@ -389,6 +389,50 @@ br.sp {
 
     &__date {
         font-size: 0.875rem;
+    }
+}
+
+/* location
+----------------------------- */
+.location {
+    background: url(../images/bg01.jpg) repeat;
+    background-size: cover;
+
+    &__info {
+        margin-bottom: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    figure {
+        width: 55%;
+        float: left;
+        @include resize-img-parent(56%);
+
+        img {
+            @include resize-img-child($ex);
+        }
+
+    }
+
+    &__txt {
+        width: 40%;
+
+        h3 {
+            font-size: 1rem;
+        }
+        p:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .location__map {
+        max-width: 800px;
+        margin: auto;
+    }
+    iframe {
+        width: 100%;
     }
 }
 
