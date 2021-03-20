@@ -6,6 +6,13 @@
 
 /* MIXIN
 ----------------------------- */
+@mixin inner() {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+    padding: 3% 0;
+}
+
 @mixin resize-img-parent($ratio) {
     position: relative;
 
@@ -35,12 +42,14 @@ html {
 body {
     font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
     color: $text-color;
-    line-height: 2;
 }
 img {
     max-width: 100%;
     max-height: 100%;
     vertical-align: bottom;
+}
+p {
+    line-height: 2;
 }
 a {
     text-decoration: none;
@@ -138,7 +147,7 @@ br.sp {
 /* MAIN
 ----------------------------- */
 .main {
-    width: 100vw;
+    width: 100%;
     @include resize-img-parent(56.2%);
     overflow: hidden;
 
@@ -190,14 +199,11 @@ br.sp {
 /* MESSAGE
 ----------------------------- */
 .message {
-    width: 100%;
-    background: url(../images/bg.jpg) center center no-repeat;
+    background: url(../images/bg01.jpg) center center no-repeat;
     background-size: cover;
 
     &__inner {
-        width: 100%;
-        max-width: 1180px;
-        margin: auto;
+        @include inner();
         padding: 3% 8% 5%;
         display: flex;
         flex-direction: column;
@@ -274,7 +280,6 @@ br.sp {
     min-width: 200px;
     padding: 20px 45px;
     border: 1px solid #707070;
-    line-height: 1;
     transition: .5s;
 
     &:hover {
@@ -287,6 +292,59 @@ br.sp {
 
     a {
         color: $text-color;
+    }
+}
+
+/* OFFERS
+----------------------------- */
+.offers {
+    padding: 0 3%;
+    background: url(../images/bg02.jpg) center center no-repeat;
+    background-size: cover;
+
+    &__container {
+        margin-bottom: 4%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        flex: 0 0 28%;
+
+        figure {
+            margin-bottom: 2vw;
+            @include resize-img-parent(63%);
+
+            img {
+                @include resize-img-child($ex);
+                top: 0;
+                left: 0;
+            }
+        }
+
+        h3 {
+            margin-bottom: 1.5vw;
+        }
+    }
+}
+
+.section__inner {
+    @include inner();
+}
+
+.section__title {
+    margin: 10px auto 4%;
+    display: table;
+    font-size: 2rem;
+
+    &::before {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 10px;
+        display: block;
+        content: '';
+        background: url(../images/logo_black.png) no-repeat;
+        background-size: contain;
     }
 }
 
