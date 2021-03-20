@@ -35,6 +35,7 @@ html {
 body {
     font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
     color: $text-color;
+    line-height: 2;
 }
 img {
     max-width: 100%;
@@ -125,6 +126,7 @@ br.sp {
 
     p {
         font-size: 16px;
+        line-height: 1;
     }
 }
 
@@ -244,13 +246,18 @@ br.sp {
 
     &__txt {
         max-width: 40%;
-        padding: 30px 7% 150px;
+        padding: 30px 7%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
 
         h2 {
+            margin-bottom: 3.5vw;
             font-size: 2.25rem;
+            line-height: 1.7;
+        }
+
+        p {
+            margin-bottom: 3.5vw;
         }
     }
 }
@@ -260,6 +267,7 @@ br.sp {
     min-width: 200px;
     padding: 20px 45px;
     border: 1px solid #707070;
+    line-height: 1;
 
     a {
         color: $text-color;
