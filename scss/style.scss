@@ -2,26 +2,11 @@
 
 /* VARIABLES
 ----------------------------- */
-@import 'variables';
+//@import 'variables';
 
 /* MIXIN
 ----------------------------- */
-@mixin resize-img-parent($ratio) {
-    position: relative;
 
-    &::before {
-        display: block;
-        padding-top: $ratio;
-        content: '';
-    }
-}
-
-@mixin resize-img-child($type) {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    object-fit: $type;
-}
 
 /* COMMON
 ----------------------------- */
@@ -34,7 +19,7 @@ html {
 }
 body {
     font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-    color: $text-color;
+    //color: $text-color;
 }
 img {
     max-width: 100%;
@@ -104,7 +89,7 @@ br.sp {
     }
 }
 
-.btn--book {
+.btn__book {
     width: 170px;
     height: 55px;
     padding: 0 35px;
@@ -131,9 +116,14 @@ br.sp {
 /* MAIN
 ----------------------------- */
 .main {
-    width: 100vw;
-    @include resize-img-parent(56.2%);
+    position: relative;
     overflow: hidden;
+
+    &::before {
+        display: block;
+        padding-top: 56.2%;
+        content: '';
+    }
 
     &__slogan {
         position: absolute;
@@ -148,9 +138,14 @@ br.sp {
     }
 
     &__bg {
-        @include resize-img-child($ex);
+        width: 100%;
+        height: 100%;
+        position: absolute;
         top: 0;
         left: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
         opacity: 0;
         animation: zoom-in 15s 0s infinite linear;
 
@@ -200,7 +195,7 @@ br.sp {
         text-orientation: upright;
     }
 
-    h2 {
+    h3 {
         font-size: 1.75rem;
         letter-spacing: 0.6rem;
         text-indent: -4.5rem;
@@ -214,55 +209,6 @@ br.sp {
             align-self: flex-end;
             font-size: 1.375rem;
         }
-    }
-}
-
-/* ABOUT
------------------------------ */
-.about {
-    padding: 100px 0 80px;
-
-    &__item {
-        margin-bottom: 6%;
-        display: flex;
-
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-    }
-
-    &__img {
-        width: 55%;
-        @include resize-img-parent(52%);
-
-        img {
-            @include resize-img-child($ex);
-            top: 0;
-            left: 0;
-        }
-    }
-
-    &__txt {
-        max-width: 40%;
-        padding: 30px 7% 150px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        h2 {
-            font-size: 2.25rem;
-        }
-    }
-}
-
-.btn {
-    width: fit-content;
-    min-width: 200px;
-    padding: 20px 45px;
-    border: 1px solid #707070;
-
-    a {
-        color: $text-color;
     }
 }
 
