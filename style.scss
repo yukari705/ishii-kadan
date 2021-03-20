@@ -72,6 +72,7 @@ br.sp {
         margin-right: 5%;
         display: flex;
         align-items: center;
+        transition: .5s;
 
         &:hover {
             opacity: .7;
@@ -97,6 +98,7 @@ br.sp {
         a {
             margin-left: 30px;
             color: #FFFFFF;
+            transition: .5s;
 
             &:hover {
                 opacity: .7;
@@ -116,6 +118,11 @@ br.sp {
     align-items: center;
     color: #FFFFFF;
     background: #978F10;
+    transition: .5s;
+
+    &:hover {
+        background: lighten(#978F10, 10);
+    }
 
     img {
         width: 22px;
@@ -268,6 +275,15 @@ br.sp {
     padding: 20px 45px;
     border: 1px solid #707070;
     line-height: 1;
+    transition: .5s;
+
+    &:hover {
+        background: #707070;
+
+        a {
+            color: #fff;
+        }
+    }
 
     a {
         color: $text-color;
