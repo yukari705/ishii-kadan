@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+/* VARIABLES
+----------------------------- */
+@import 'variables';
+
+/* MIXIN
+----------------------------- */
+@mixin resize-img-parent($ratio) {
+    position: relative;
+
+    &::before {
+        display: block;
+        padding-top: $ratio;
+        content: '';
+    }
+}
+
+@mixin resize-img-child($type) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: $type;
+}
+
+/* COMMON
+----------------------------- */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+    color: $text-color;
+    line-height: 2;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+br.sp {
+    display: none;
+}
+
+/* HEADER
+----------------------------- */
+.header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 99;
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+        padding: 0 2%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        margin-right: 5%;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            opacity: .7;
+        }
+
+        &--img {
+            width: 40px;
+            height: 40px;
+        }
+
+        &--title {
+            margin-left: 15px;
+            font-size: 32px;
+            letter-spacing: .18em;
+            line-height: 48px;
+            color: #FFFFFF;
+        }
+    }
+
+    &__nav {
+        display: flex;
+
+        a {
+            margin-left: 30px;
+            color: #FFFFFF;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}
+
+.btn--book {
+    width: 170px;
+    height: 55px;
+    padding: 0 35px;
+    position: absolute;
+    right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    background: #978F10;
+
+    img {
+        width: 22px;
+        height: 22px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1;
+    }
+}
+
+/* MAIN
+----------------------------- */
+.main {
+    width: 100vw;
+    @include resize-img-parent(56.2%);
+    overflow: hidden;
+
+    &__slogan {
+        position: absolute;
+        top: 33%;
+        right: 25%;
+        z-index: 90;
+        color: #FFFFFF;
+        font-size: 34px;
+        letter-spacing: 0.6rem;
+        line-height: 2.5;
+        writing-mode: vertical-rl;
+    }
+
+    &__bg {
+        @include resize-img-child($ex);
+        top: 0;
+        left: 0;
+        opacity: 0;
+        animation: zoom-in 15s 0s infinite linear;
+
+        &:nth-of-type(2) {
+            animation-delay: 5s;
+        }
+
+        &:nth-of-type(3) {
+            animation-delay: 10s;
+        }
+
+        @keyframes zoom-in {
+            0% {
+                opacity: 0;
+            }
+            7% {
+                opacity: 1;
+            }
+            33% {
+                opacity: 1;
+            }
+            40% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+/* MESSAGE
+----------------------------- */
+.message {
+    width: 100%;
+    background: url(../images/bg.jpg) center center no-repeat;
+    background-size: cover;
+
+    &__inner {
+        width: 100%;
+        max-width: 1180px;
+        margin: auto;
+        padding: 7% 8% 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 2.4;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        letter-spacing: 0.6rem;
+        text-indent: -4.5rem;
+    }
+
+    p {
+        letter-spacing: 0.4rem;
+
+        &:last-child {
+            margin-bottom: 5%;
+            align-self: flex-end;
+            font-size: 1.375rem;
+        }
+    }
+}
+
+/* ABOUT
+----------------------------- */
+.about {
+    padding: 100px 0 80px;
+
+    &__item {
+        margin-bottom: 6%;
+        display: flex;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        width: 55%;
+        @include resize-img-parent(52%);
+
+        img {
+            @include resize-img-child($ex);
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__txt {
+        max-width: 40%;
+        padding: 30px 7%;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin-bottom: 3.5vw;
+            font-size: 2.25rem;
+            line-height: 1.7;
+        }
+
+        p {
+            margin-bottom: 3.5vw;
+        }
+    }
+}
+
+.btn {
+    width: fit-content;
+    min-width: 200px;
+    padding: 20px 45px;
+    border: 1px solid #707070;
+    line-height: 1;
+
+    a {
+        color: $text-color;
+    }
+}
+
+/* TABLET
+----------------------------- */
+@media (max-width: 800px) {
+}
+
+/* SMARTPHONE
+----------------------------- */
+@media (max-width: 700px) {
+}
