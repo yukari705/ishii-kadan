@@ -13,6 +13,33 @@
     padding: 3% 0;
 }
 
+@mixin logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    display: block;
+    content: '';
+    background: url(../images/logo_bk.png) no-repeat;
+    background-size: contain;
+}
+
+@mixin logo-txt($color) {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: .18em;
+    line-height: 48px;
+    color: $color;
+}
+
+@mixin link($color) {
+    color: $color;
+    transition: .5s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
 @mixin resize-img-parent($ratio) {
     position: relative;
 
@@ -74,7 +101,7 @@ br.sp {
     &__inner {
         width: 100%;
         height: 100%;
-        padding: 0 2%;
+        padding: 0 1%;
         display: flex;
         align-items: center;
     }
@@ -83,24 +110,17 @@ br.sp {
         margin-right: 5%;
         display: flex;
         align-items: center;
-        transition: .5s;
+        @include link(#FFFFFF);
+    }
 
-        &:hover {
-            opacity: .7;
-        }
+    &__img {
+        width: 40px;
+        height: 40px;
+    }
 
-        &--img {
-            width: 40px;
-            height: 40px;
-        }
-
-        &--title {
-            margin-left: 15px;
-            font-size: 32px;
-            letter-spacing: .18em;
-            line-height: 48px;
-            color: #FFFFFF;
-        }
+    &__title {
+        margin-left: 15px;
+        @include logo-txt(#FFFFFF);
     }
 
     &__nav {
@@ -108,12 +128,7 @@ br.sp {
 
         a {
             margin-left: 30px;
-            color: #FFFFFF;
-            transition: .5s;
-
-            &:hover {
-                opacity: .7;
-            }
+            @include link(#FFFFFF);
         }
     }
 }
@@ -240,6 +255,7 @@ br.sp {
     &__item {
         margin-bottom: 6%;
         display: flex;
+        justify-content: space-between;
 
         &:nth-child(even) {
             flex-direction: row-reverse;
@@ -256,8 +272,10 @@ br.sp {
     }
 
     &__txt {
-        max-width: 40%;
-        padding: 30px 7%;
+
+    width: fit-content;
+        max-width: 33%;
+        padding: 30px 0;
         display: flex;
         flex-direction: column;
 
@@ -320,6 +338,7 @@ br.sp {
 
         h3 {
             margin-bottom: 1.5vw;
+            font-size: 1.25rem;
         }
     }
 }
@@ -334,13 +353,7 @@ br.sp {
     font-size: 2rem;
 
     &::before {
-        width: 40px;
-        height: 40px;
-        margin: 0 auto 10px;
-        display: block;
-        content: '';
-        background: url(../images/logo_black.png) no-repeat;
-        background-size: contain;
+        @include logo-img();
     }
 }
 
@@ -395,11 +408,12 @@ br.sp {
 /* location
 ----------------------------- */
 .location {
+    padding: 0 3%;
     background: url(../images/bg01.jpg) repeat;
     background-size: cover;
 
     &__info {
-        margin-bottom: 70px;
+        margin: 6% auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -429,10 +443,62 @@ br.sp {
 
     .location__map {
         max-width: 800px;
-        margin: auto;
+        margin: 0 auto 3%;
+
+        iframe {
+            width: 100%;
+        }
     }
-    iframe {
-        width: 100%;
+}
+
+/* FOOTER
+----------------------------- */
+.footer {
+    background: url(../images/bg03.jpg) center center no-repeat;
+    background-size: cover;
+
+    &__nav {
+        margin: auto;
+        margin-bottom: 7%;
+        writing-mode: vertical-rl;
+
+        a {
+            display: block;
+            margin: 0 30px;
+            font-size: 1.125rem;
+            letter-spacing: 1rem;
+            @include link($text-color);
+        }
+    }
+
+    &__logo {
+        @include logo-txt(#000000);
+        margin-bottom: 6%;
+        text-align: center;
+
+        &::before {
+            @include logo-img();
+        }
+    }
+
+    .footer__info {
+        text-align: center;
+
+        span {
+            display: inline-block;
+            margin-left: 20px;
+        }
+    }
+
+    .footer__copyright {
+        padding: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        background: #000;
+
+        small {
+            font-size: 0.75rem;
+        }
     }
 }
 
