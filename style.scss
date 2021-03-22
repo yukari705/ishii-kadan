@@ -40,6 +40,20 @@
     }
 }
 
+@mixin btn($py) {
+    width: fit-content;
+    min-width: 200px;
+    padding: $py 45px;
+    color: $text-color;
+    border: 1px solid #707070;
+    transition: .5s;
+
+    &:hover {
+        color: #fff;
+        background: #707070;
+    }
+}
+
 @mixin resize-img-parent($ratio) {
     position: relative;
 
@@ -86,6 +100,9 @@ a {
 ul {
     list-style: none;
 }
+button {
+    border: none;
+}
 br.sp {
     display: none;
 }
@@ -96,7 +113,7 @@ br.sp {
     width: 100%;
     height: 80px;
     position: fixed;
-    z-index: 99;
+    z-index: 10;
 
     &__inner {
         width: 100%;
@@ -161,6 +178,80 @@ br.sp {
     }
 }
 
+.modal {
+    width: 100%;
+    height: 100%;
+    //visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    //opacity: 0;
+    transition: .5s;
+
+    &__content {
+        width: 90%;
+        max-width: 550px;
+        padding: 2% 3% 5%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform :translate(-50%, -50%);
+        background: #FFFFFF;
+        border: 1px solid #707070;
+    }
+
+    &__title {
+        padding-bottom: 3%;
+        font-size: 1.25rem;
+        text-align: center;
+        border-bottom: 1px solid #E7E7E7;
+    }
+
+    &__close {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.form {
+    margin-top: 35px;
+
+    &__item {
+        margin-bottom: 30px;
+
+        &:last-of-type {
+            margin-bottom: 10%;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #E7E7E7;
+        }
+    }
+
+    &__label {
+        margin-bottom: 15px;
+
+        span {
+            font-size: 0.875rem
+        }
+    }
+
+    .btn--submit {
+        @include btn(10px);
+        display: table;
+        margin: auto;
+    }
+}
+
 /* MAIN
 ----------------------------- */
 .main {
@@ -172,7 +263,7 @@ br.sp {
         position: absolute;
         top: 33%;
         right: 25%;
-        z-index: 90;
+        z-index: 1;
         color: #FFFFFF;
         font-size: 2.125rem;
         letter-spacing: 0.6rem;
@@ -300,24 +391,8 @@ br.sp {
     }
 }
 
-.btn {
-    width: fit-content;
-    min-width: 200px;
-    padding: 20px 45px;
-    border: 1px solid #707070;
-    transition: .5s;
-
-    &:hover {
-        background: #707070;
-
-        a {
-            color: #fff;
-        }
-    }
-
-    a {
-        color: $text-color;
-    }
+.btn--link {
+    @include btn(20px);
 }
 
 /* OFFERS
