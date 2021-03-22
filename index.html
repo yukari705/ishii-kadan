@@ -15,12 +15,10 @@
             <link rel="stylesheet" href="css/style.css">
 
             <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
 
         <!-- js -->
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     </head>
 
     <body>
@@ -45,6 +43,37 @@
                 </button><!-- /.btn--book -->
             </div><!-- /.header__inner -->
         </header><!-- /.header -->
+
+        <div class="modal">
+            <div class="modal__content">
+                <h2 class="modal__title">宿泊予約</h2>
+                <form class="form" action="#">
+                    <div class="form__item">
+                        <label class="form__label">お名前<input type="text" name="" placeholder="例：石井正悟" required></label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label">メールアドレス<input type="text" name="" placeholder="例：Example@example.com" required></label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label">ご希望プラン<span>（空いているプランのみ表示されます）</span>
+                            <div class="form__select">
+                                <select name="subject">
+                                    <option value="none">プランを選択してください</option>
+                                    <option value="01limited">①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+                                    <option value="02weekday">②平日に優雅に楽しむ、特別宿泊プラン</option>
+                                    <option value="03family">③絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__label">日時選択<input type="text" name="" placeholder="例：石井正悟" required></label>
+                    </div>
+                    <input class="btn--submit" type="submit" value="送信する" id="js-submit" disabled>
+                </form>
+                <button class="modal__close"><img src="images/close.png" alt="予約画面を閉じる"></button>
+            </div>
+        </div>
 
         <section id="main" class="main">
             <h2 class="main__slogan">頑張る人の<br>頑張らない時間</h2>
@@ -75,7 +104,7 @@
                         ひたすらにゆったりと…。<br>
                         最高級の「何もしない時間」をお過ごしください。
                     </p>
-                    <button class="btn"><a href="">お部屋について</a></button>
+                    <a href="" class="btn--link">お部屋について</a>
                 </div><!-- /.about__txt -->
             </div><!-- /.about__item -->
             <div class="about__item">
@@ -89,7 +118,7 @@
                         最高級A5ランクの米沢牛と共に頂く。<br>
                         あなたの人生史に残る「極上の感動」を<br>お約束します。
                     </p>
-                    <button class="btn"><a href="">料理について</a></button>
+                    <a href="" class="btn--link">料理について</a>
                 </div><!-- /.about__txt -->
             </div><!-- /.about__item -->
             <div class="about__item">
@@ -103,7 +132,7 @@
                         >現代人の疲弊しきった身体を修復する最高級の湯治場として<br>
                         ご活用ください。
                     </p>
-                    <button class="btn"><a href="">お部屋について</a></button>
+                    <a href="" class="btn--link">お部屋について</a>
                 </div><!-- /.about__txt -->
             </div><!-- /.about__item -->
         </section><!-- /#about -->
@@ -220,12 +249,18 @@
                         <li><a href="">お料理</a></li>
                         <li><a href="">温泉</a></li>
                     </ul>
-                    <p class="footer__logo">石井花壇</p>
-                    <p class="footer__info">〒000-0000<span></span>山形県鶴岡市xxxxxxxxxxx</p>
-                    <p class="footer__info">TEL.000-0000-0000<span></span>FAX.00-0000-0000</p>
                 </nav><!-- /.footer__nav -->
+                <p class="footer__logo">石井花壇</p>
+                <p class="footer__info">
+                    〒000-0000<span></span>山形県鶴岡市xxxxxxxxxxx
+                </p>
+                <p class="footer__info">
+                    TEL.000-0000-0000<span></span>FAX.00-0000-0000
+                </p>
             </div><!-- /.section__inner -->
-            <p class="footer__copyright"><small>Copyright &copy; 石井花壇 All Rights Reserved.</small></p>
+            <p class="footer__copyright"><small>
+                Copyright &copy; 石井花壇 All Rights Reserved.
+            </small></p>
         </footer>
 
         <script src="../js/jquery-3.6.0.min.js"></script>
