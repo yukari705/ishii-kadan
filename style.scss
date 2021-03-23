@@ -45,6 +45,7 @@
     min-width: 200px;
     padding: $py 45px;
     color: $text-color;
+    text-align: center;
     border: 1px solid #707070;
     transition: .5s;
 
@@ -73,6 +74,19 @@
     object-fit: $type;
 }
 
+@mixin fade-in($duration) {
+    animation-name: fade-in $duration ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* COMMON
 ----------------------------- */
 html {
@@ -83,7 +97,7 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", 'Noto Serif JP', "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
     color: $text-color;
 }
 img {
@@ -181,14 +195,14 @@ br.sp {
 .modal {
     width: 100%;
     height: 100%;
-    //visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 20;
     background: rgba(0, 0, 0, .5);
+    visibility: hidden;
+    opacity: 0;
     overflow: hidden;
-    //opacity: 0;
     transition: .5s;
 
     &__content {
@@ -332,7 +346,7 @@ br.sp {
 
         &:last-child {
             margin-bottom: 5%;
-            align-self: flex-end;
+            text-align: right;
             font-size: 1.375rem;
         }
     }
@@ -447,18 +461,31 @@ br.sp {
     padding: 0 3%;
 
     &__category {
-        text-align: center;
         margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
 
-        button {
+        li {
             margin: 0 25px;
+            line-height: 1;
+            cursor: pointer;
+
+            &.is-active {
+                border-bottom: 1px solid #000;
+                cursor: default;
+            }
         }
     }
 
     &__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: none;
+
+        &.is-active {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            @include fade-in(.5s);
+        }
     }
 
     &__item {
@@ -466,7 +493,6 @@ br.sp {
         margin-bottom: 20px;
         padding: 15px 10px;
         display: flex;
-        justify-content: space-between;
         background: #F6F6F6;
 
         figure {
@@ -481,7 +507,8 @@ br.sp {
     }
 
     &__title {
-        width: 75%;
+        width: 80%;
+        padding-left: 5%;
     }
 
     &__date {
