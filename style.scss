@@ -33,7 +33,7 @@
 
 @mixin link($color) {
     color: $color;
-    transition: .5s;
+    transition: color .5s;
 
     &:hover {
         opacity: .7;
@@ -128,6 +128,7 @@ br.sp {
     height: 80px;
     position: fixed;
     z-index: 10;
+    background: #FFFFFF;
 
     &__inner {
         width: 100%;
@@ -141,17 +142,19 @@ br.sp {
         margin-right: 5%;
         display: flex;
         align-items: center;
-        @include link(#FFFFFF);
+        @include link($text-color);
     }
 
     &__img {
         width: 40px;
         height: 40px;
+        background: url(../images/logo_bk.png);
+        background-size: contain;
     }
 
     &__title {
         margin-left: 15px;
-        @include logo-txt(#FFFFFF);
+        @include logo-txt($text-color);
     }
 
     &__nav {
@@ -159,17 +162,41 @@ br.sp {
 
         a {
             margin-left: 30px;
+            @include link($text-color);
+        }
+    }
+}
+
+.header--transparent {
+    background: rgba(255, 255, 255, 0);
+
+    .header__logo {
+        @include link(#FFFFFF);
+    }
+
+    .header__img {
+        background: url(../images/logo_wh.png);
+        background-size: contain;
+    }
+
+    .header__title {
+        @include logo-txt(#FFFFFF);
+    }
+
+    .header__nav {
+        a {
             @include link(#FFFFFF);
         }
     }
 }
+
 
 .btn--book {
     width: 170px;
     height: 55px;
     padding: 0 35px;
     position: absolute;
-    right: 2%;
+    right: 1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -204,6 +231,17 @@ br.sp {
     opacity: 0;
     overflow: hidden;
     transition: .5s;
+
+    &.is-show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
 
     &__content {
         width: 90%;
@@ -266,8 +304,9 @@ br.sp {
     }
 }
 
-/* MAIN
+/* TOP
 ----------------------------- */
+/* MAIN */
 .main {
     width: 100%;
     @include resize-img-parent(56.2%);
@@ -316,8 +355,7 @@ br.sp {
     }
 }
 
-/* MESSAGE
------------------------------ */
+/* MESSAGE */
 .message {
     background: url(../images/bg01.jpg) center center no-repeat;
     background-size: cover;
@@ -352,8 +390,7 @@ br.sp {
     }
 }
 
-/* ABOUT
------------------------------ */
+/* ABOUT */
 .about {
     padding: 100px 0 80px;
 
@@ -409,8 +446,7 @@ br.sp {
     @include btn(20px);
 }
 
-/* OFFERS
------------------------------ */
+/* OFFERS */
 .offers {
     padding: 0 3%;
     background: url(../images/bg02.jpg) center center no-repeat;
@@ -455,8 +491,7 @@ br.sp {
     }
 }
 
-/* NEWS
------------------------------ */
+/* NEWS */
 .news {
     padding: 0 3%;
 
@@ -516,8 +551,7 @@ br.sp {
     }
 }
 
-/* location
------------------------------ */
+/* location */
 .location {
     padding: 0 3%;
     background: url(../images/bg01.jpg) repeat;
@@ -560,6 +594,15 @@ br.sp {
             width: 100%;
         }
     }
+}
+
+/* ROOMS
+----------------------------- */
+/* PAGE TITLE */
+.page-title {
+    width: 100%;
+    background: url(../images/rooms.jpg);
+    @include resize-img-parent(26%)
 }
 
 /* FOOTER
