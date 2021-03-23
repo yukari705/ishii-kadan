@@ -2,13 +2,13 @@
 <html lang="ja">
     <head>
         <!-- Primary Meta Tags -->
-        <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
-        <meta name="title" content="石井花壇 | 温海温泉旅館【公式サイト】">
-        <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。 伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+            <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
+            <meta name="title" content="石井花壇 | 温海温泉旅館【公式サイト】">
+            <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。 伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noindex">
-        <link rel="icon" type="image/png" href="images/logo02.png">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="robots" content="noindex">
+            <link rel="icon" type="image/png" href="images/logo02.png">
 
         <!-- CSS -->
             <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -18,8 +18,7 @@
             <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;900&display=swap" rel="stylesheet">
 
         <!-- js -->
-            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     </head>
 
     <body>
@@ -38,22 +37,27 @@
                         <li><a href="">温泉</a></li>
                     </ul><!-- /.header__nav -->
                 </nav>
-                <button class="btn--book">
+                <button class="btn--book" id="js-btn-book">
                     <img src="images/calender.png" alt="">
                     <p>宿泊予約</p>
                 </button><!-- /.btn--book -->
             </div><!-- /.header__inner -->
         </header><!-- /.header -->
 
-        <div class="modal">
+        <div class="modal" id="js-modal">
+            <div class="modal__bg" id="js-modal-bg"></div>
             <div class="modal__content">
                 <h2 class="modal__title">宿泊予約</h2>
                 <form class="form" action="#">
                     <div class="form__item">
-                        <label class="form__label">お名前<input type="text" name="" placeholder="例：石井正悟" required></label>
+                        <label class="form__label">
+                            お名前<input type="text" name="" placeholder="例：石井正悟" required>
+                        </label>
                     </div>
                     <div class="form__item">
-                        <label class="form__label">メールアドレス<input type="text" name="" placeholder="例：Example@example.com" required></label>
+                        <label class="form__label">
+                            メールアドレス<input type="text" name="" placeholder="例：Example@example.com" required>
+                        </label>
                     </div>
                     <div class="form__item">
                         <label class="form__label">ご希望プラン<span>（空いているプランのみ表示されます）</span>
@@ -68,11 +72,13 @@
                         </label>
                     </div>
                     <div class="form__item">
-                        <label class="form__label">日時選択<input type="text" name="" placeholder="例：石井正悟" required></label>
+                        <label class="form__label">
+                            日時選択<input id="flatpickr" type="text" name="" placeholder="日時を選択してください" required>
+                        </label>
                     </div>
                     <input class="btn--submit" type="submit" value="送信する" id="js-submit" disabled>
                 </form>
-                <button class="modal__close"><img src="images/close.png" alt="予約画面を閉じる"></button>
+                <button class="modal__close" id="js-modal-close"><img src="images/close.png" alt="予約画面を閉じる"></button>
             </div>
         </div>
 
@@ -312,8 +318,8 @@
 
         <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="js/script.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://unpkg.com/scrollreveal"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
     </body>
 </html>
