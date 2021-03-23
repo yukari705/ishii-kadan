@@ -1,9 +1,27 @@
 $(function() {
-    AOS.init({
-        offset: 200,
+    /* SCROLL REVEAL
+    ----------------------------- */
+    var fadeIn = {
         duration: 1000,
-        easing: 'linear'
-    });
+        easing: 'linear',
+        viewFactor: 0.5,
+        useDelay: 'onload',
+        delay: 600,
+        interval: 300
+    };
+
+    var fadeUp = {
+        distance: '20px',
+        duration: 1000,
+        easing: 'ease',
+        viewFactor: 0.8,
+        useDelay: 'onload',
+        delay: 600,
+        interval: 300
+    };
+
+    ScrollReveal().reveal('.fade-in', fadeIn);
+    ScrollReveal().reveal('.fade-up', fadeUp);
 
     /* HEADER
     ----------------------------- */
@@ -35,7 +53,17 @@ $(function() {
         drawerClose();
     });
 
+    /* NEWS
+    ----------------------------- */
+    $('.js-news-category').click(function() {
+        $('.js-news-category').removeClass('is-active');
+        $('.js-news-list').removeClass('is-active');
 
+        $(this).addClass('is-active');
+
+        let id = $(this).data("id");
+        $('#' + id).addClass('is-active');
+    });
 
     /* FORM
     ----------------------------- */
