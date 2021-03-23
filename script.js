@@ -25,6 +25,15 @@ $(function() {
 
     /* HEADER
     ----------------------------- */
+    /* CHANGE COLOR */
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 0) {
+            $('#header').removeClass('header--transparent');
+        } else {
+            $('#header').addClass('header--transparent');
+        }
+    });
+
     /* SMOOTH SCROLL */
     $('#js-header-logo').click(function() {
         $('html, body').animate({scrollTop: 0}, 500);
