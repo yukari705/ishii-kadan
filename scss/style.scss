@@ -2,11 +2,26 @@
 
 /* VARIABLES
 ----------------------------- */
-//@import 'variables';
+@import 'variables';
 
 /* MIXIN
 ----------------------------- */
+@mixin resize-img-parent($ratio) {
+    position: relative;
 
+    &::before {
+        display: block;
+        padding-top: $ratio;
+        content: '';
+    }
+}
+
+@mixin resize-img-child($type) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: $type;
+}
 
 /* COMMON
 ----------------------------- */
@@ -19,7 +34,8 @@ html {
 }
 body {
     font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-    //color: $text-color;
+    color: $text-color;
+    line-height: 2;
 }
 img {
     max-width: 100%;
@@ -89,7 +105,7 @@ br.sp {
     }
 }
 
-.btn__book {
+.btn--book {
     width: 170px;
     height: 55px;
     padding: 0 35px;
@@ -110,20 +126,16 @@ br.sp {
 
     p {
         font-size: 16px;
+        line-height: 1;
     }
 }
 
 /* MAIN
 ----------------------------- */
 .main {
-    position: relative;
+    width: 100vw;
+    @include resize-img-parent(56.2%);
     overflow: hidden;
-
-    &::before {
-        display: block;
-        padding-top: 56.2%;
-        content: '';
-    }
 
     &__slogan {
         position: absolute;
@@ -138,14 +150,9 @@ br.sp {
     }
 
     &__bg {
-        width: 100%;
-        height: 100%;
-        position: absolute;
+        @include resize-img-child($ex);
         top: 0;
         left: 0;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
         opacity: 0;
         animation: zoom-in 15s 0s infinite linear;
 
@@ -195,7 +202,7 @@ br.sp {
         text-orientation: upright;
     }
 
-    h3 {
+    h2 {
         font-size: 1.75rem;
         letter-spacing: 0.6rem;
         text-indent: -4.5rem;
@@ -209,6 +216,61 @@ br.sp {
             align-self: flex-end;
             font-size: 1.375rem;
         }
+    }
+}
+
+/* ABOUT
+----------------------------- */
+.about {
+    padding: 100px 0 80px;
+
+    &__item {
+        margin-bottom: 6%;
+        display: flex;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        width: 55%;
+        @include resize-img-parent(52%);
+
+        img {
+            @include resize-img-child($ex);
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__txt {
+        max-width: 40%;
+        padding: 30px 7%;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin-bottom: 3.5vw;
+            font-size: 2.25rem;
+            line-height: 1.7;
+        }
+
+        p {
+            margin-bottom: 3.5vw;
+        }
+    }
+}
+
+.btn {
+    width: fit-content;
+    min-width: 200px;
+    padding: 20px 45px;
+    border: 1px solid #707070;
+    line-height: 1;
+
+    a {
+        color: $text-color;
     }
 }
 
