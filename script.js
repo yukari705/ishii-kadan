@@ -53,6 +53,29 @@ $(function() {
         drawerClose();
     });
 
+    /* MODAL
+    ----------------------------- */
+    $('#js-btn-book').click(function() {
+        $('#js-modal').toggleClass('is-show');
+    });
+
+    $('#js-modal-close').click(function() {
+        $('#js-modal').removeClass('is-show');
+    });
+
+    $('#js-modal-bg').click(function() {
+        $('#js-modal').removeClass('is-show');
+    });
+
+    /* DATE SELECT */
+    flatpickr.l10ns.default.firstDayOfWeek = 1; // Monday
+
+    flatpickr('#flatpickr', {
+        locale: 'ja',
+        mode: 'range',
+        minDate: 'today',
+    });
+
     /* NEWS
     ----------------------------- */
     $('.js-news-category').click(function() {
