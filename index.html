@@ -22,12 +22,11 @@
     </head>
 
     <body>
-        <header class="header">
+        <!-- HEADER -->
+        <header id="header" class="header header--transparent">
             <div class="header__inner">
                 <a href="#" class="header__logo" id="js-header-logo">
-                    <div class="header__img">
-                        <img src="images/logo_wh.png" alt="石井花壇のロゴ">
-                    </div><!-- /.header__img -->
+                    <div class="header__img"></div>
                     <h1 class="header__title">石井花壇</h1>
                 </a><!-- /.header__logo -->
                 <nav>
@@ -44,6 +43,7 @@
             </div><!-- /.header__inner -->
         </header><!-- /.header -->
 
+        <!-- MODAL -->
         <div class="modal" id="js-modal">
             <div class="modal__bg" id="js-modal-bg"></div>
             <div class="modal__content">
@@ -82,6 +82,7 @@
             </div>
         </div>
 
+        <!-- MAIN -->
         <section id="main" class="main">
             <h2 class="main__slogan"><span class="fade-up">頑張る人の</span><br><span class="fade-up">頑張らない時間</span></h2>
             <img src="images/mainbg01.jpg" class="main__bg" alt="">
@@ -89,6 +90,7 @@
             <img src="images/mainbg03.jpg" class="main__bg" alt="">
         </section>
 
+        <!-- MESSAGE -->
         <section class="message">
             <div class="message__inner">
                 <h2 class="fade-up">温海温泉の<br>美しさに癒やされて</h2>
@@ -99,6 +101,7 @@
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about" class="about">
             <div class="about__item">
                 <figure class="about__img fade-in"><img src="images/rooms.jpg" alt="お部屋"></figure>
@@ -144,6 +147,7 @@
             </div><!-- /.about__item -->
         </section><!-- /#about -->
 
+        <!-- OFFERS -->
         <section id="offers" class="offers">
             <div class="section__inner">
                 <h2 class="section__title fade-up">
@@ -169,6 +173,7 @@
             </div><!-- /.section__inner -->
         </section><!-- #offers -->
 
+        <!-- NEWS -->
         <section id="news" class="news">
             <div class="section__inner">
                 <h2 class="section__title fade-up">
@@ -271,6 +276,7 @@
             </div><!-- /.section__inner -->
         </section><!-- #news -->
 
+        <!-- LOCATION -->
         <section class="location" id="location">
             <div class="section__inner">
                 <h2 class="section__title fade-up">
@@ -294,20 +300,21 @@
             </div><!-- /.section__inner -->
         </section><!-- /#location -->
 
+        <!-- FOOTER -->
         <footer class="footer">
             <div class="section__inner">
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="">お部屋</a></li>
-                        <li><a href="">お料理</a></li>
-                        <li><a href="">温泉</a></li>
+                        <li class="fade-up"><a href="">お部屋</a></li>
+                        <li class="fade-up"><a href="">お料理</a></li>
+                        <li class="fade-up"><a href="">温泉</a></li>
                     </ul>
                 </nav><!-- /.footer__nav -->
-                <p class="footer__logo">石井花壇</p>
-                <p class="footer__info">
+                <p class="footer__logo fade-in">石井花壇</p>
+                <p class="footer__info fade-in">
                     〒000-0000<span></span>山形県鶴岡市xxxxxxxxxxx
                 </p>
-                <p class="footer__info">
+                <p class="footer__info fade-in">
                     TEL.000-0000-0000<span></span>FAX.00-0000-0000
                 </p>
             </div><!-- /.section__inner -->
@@ -316,6 +323,7 @@
             </small></p>
         </footer>
 
+        <!-- SCRIPT -->
         <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="js/script.js"></script>
         <script src="https://unpkg.com/scrollreveal"></script>
