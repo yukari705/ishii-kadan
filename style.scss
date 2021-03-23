@@ -33,10 +33,10 @@
 
 @mixin link($color) {
     color: $color;
-    transition: color .5s;
+    transition: opacity .5s;
 
     &:hover {
-        opacity: .7;
+        opacity: .6;
     }
 }
 
@@ -72,6 +72,18 @@
     top: 0;
     left: 0;
     object-fit: $type;
+}
+
+@mixin page-title-bg($img) {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), $img center center;
+    background-size: cover;
+    @include resize-img-parent(26%);
 }
 
 @mixin fade-in($duration) {
@@ -600,9 +612,12 @@ br.sp {
 ----------------------------- */
 /* PAGE TITLE */
 .page-title {
-    width: 100%;
-    background: url(../images/rooms.jpg);
-    @include resize-img-parent(26%)
+    @include page-title-bg($rooms)
+
+    &__title {
+        font-size: 2.125rem;
+        color: #FFFFFF;
+    }
 }
 
 /* FOOTER
