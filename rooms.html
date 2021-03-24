@@ -42,9 +42,9 @@
 
     <body>
         <!-- HEADER -->
-        <header class="header">
+        <header id="js-sub-header" class="header">
             <div class="header__inner">
-                <a href="#" class="header__logo" id="js-header-logo">
+                <a href="index.html" class="header__logo" id="js-header-logo">
                     <div class="header__img"></div>
                     <h1 class="header__title">石井花壇</h1>
                 </a><!-- /.header__logo -->
@@ -106,63 +106,54 @@
             <h2 class="page-title__title fade-in">お部屋</h2>
         </section>
 
-        <section class="message">
-            <div class="message__inner">
-                <h2 class="fade-up">温海温泉の<br>美しさに癒やされて</h2>
-                <p class="fade-up delay1">東北の奥座敷である温海温泉郷<br>開湯は約1300年前とされ、役小角が<br>発見したと伝えられます</p>
-                <p class="fade-up delay2">石井花壇は江戸より続く由緒ある旅館で<br>クラシックな作りの中に大正ロマンあふれる<br>内装を残しております</p>
-                <p class="fade-up delay3">圧倒的癒やしの空間で<br>頑張る現代人に<br>頑張らない圧倒的な非日常をご提供します</p>
-                <p class="fade-up delay4">石井花壇</p>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="about">
-            <div class="about__item">
-                <figure class="about__img fade-in"><img src="images/rooms.jpg" alt="お部屋"></figure>
-                <div class="about__txt">
-                    <h2 class="fade-up">
-                        喧騒から離れた空間<br>心落ち着く至極のひととき
-                    </h2>
-                    <p class="fade-up">
-                        まるで時が止まったかのような、圧倒的な静寂のなかで、<br>
-                        ひたすらにゆったりと…。<br>
-                        最高級の「何もしない時間」をお過ごしください。
-                    </p>
-                    <a href="" class="btn--link fade-up">お部屋について</a>
-                </div><!-- /.about__txt -->
-            </div><!-- /.about__item -->
-            <div class="about__item">
-                <figure class="about__img fade-in"><img src="images/dining.jpg" alt="温海料理"></figure>
-                <div class="about__txt">
-                    <h2 class="fade-up">
-                        出迎えるのは<br>極上の温海料理
-                    </h2>
-                    <p class="fade-up">
-                        最も旬の食材を愉しむ、最高の贅沢を<br>
-                        最高級A5ランクの米沢牛と共に頂く。<br>
-                        あなたの人生史に残る「極上の感動」を<br>お約束します。
-                    </p>
-                    <a href="" class="btn--link fade-up">料理について</a>
-                </div><!-- /.about__txt -->
-            </div><!-- /.about__item -->
-            <div class="about__item">
-                <figure class="about__img fade-in"><img src="images/onsen.jpg" alt="温泉"></figure>
-                <div class="about__txt">
-                    <h2 class="fade-up">
-                        疲れ切った身体にやすらぎを<br>温海の源泉に癒やされて
-                    </h2>
-                    <p class="fade-up">
-                        古くは弘法大師の病をも治療したと言われる熱海の泉質。<br
-                        >現代人の疲弊しきった身体を修復する最高級の湯治場として<br>
-                        ご活用ください。
-                    </p>
-                    <a href="" class="btn--link fade-up">お部屋について</a>
-                </div><!-- /.about__txt -->
-            </div><!-- /.about__item -->
-        </section><!-- /#about -->
-
-
+        <!-- CONTENT -->
+        <section id="rooms" class="section">
+            <div class="section__inner">
+                <aside class="section__breadcrumbs">
+                    <p><a href="index.html">トップ</a><span>></span>お部屋</p>
+                </aside>
+                <p class="section__about">
+                    創業より受け継がれてきた石井花壇の和の造り<br>
+                    温海の雄大な絶景を堪能していただけるように設計された客室<br>
+                    ゆるやかに流れ行く時間に身を委ねて
+                </p>
+                <div class="section__container">
+                    <div class="section__item">
+                        <div class="section__txt">
+                            <h3>温泉付き客室</h3>
+                            <p>温海の源泉かけ流し露天風呂付き客室になります。<br>あなただけの上質な安らぎのひとときを。</p>
+                            <p class="section__txt--caution">部屋数に限りがございます。</p>
+                            <p class="section__txt--caution">洗い場はないため、お体を先に大浴場でお流しになって頂く必要があります。</p>
+                        </div>
+                        <div class="section__img">
+                            <img src="images/room01.jpg" alt="温泉付き客室">
+                        </div>
+                    </div><!-- /.section__item -->
+                    <div class="section__item">
+                        <div class="section__txt">
+                            <h3>庭園付き客室</h3>
+                            <p>庭園付きの客室になります。<br>お庭を見ながら、ほっとするひとときをお過ごしください。</p>
+                            <p class="section__txt--caution">お庭は複数のお客様と囲む形になります。</p>
+                            <p class="section__txt--caution">部屋数に限りがあります。</p>
+                            <p class="section__txt--caution">ご希望の方は「お抹茶/500円」をルームサービスさせていただきます。</p>
+                        </div>
+                        <div class="section__img">
+                            <img src="images/room02.jpg" alt="温泉付き客室">
+                        </div>
+                    </div><!-- /.section__item -->
+                    <div class="section__item">
+                        <div class="section__txt">
+                            <h3>一般客室</h3>
+                            <p>最もベーシックな客室になります。<br>伝統の中にモダンさを取り入れた内装となっており、とても過ごしやすくしていただけます。</p>
+                            <p class="section__txt--caution">全室お部屋より日本海を望むことができます。</p>
+                        </div>
+                        <div class="section__img">
+                            <img src="images/room03.jpg" alt="温泉付き客室">
+                        </div>
+                    </div><!-- /.section__item -->
+                </div><!-- /.section__container -->
+            </div><!-- /.section__inner -->
+        </section><!-- #rooms -->
 
         <!-- FOOTER -->
         <footer class="footer">
