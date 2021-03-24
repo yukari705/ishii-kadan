@@ -612,12 +612,14 @@ br.sp {
 ----------------------------- */
 /* PAGE TITLE */
 .page-title {
+    &.rooms {
     @include page-title-bg($rooms)
-
-    &__title {
-        font-size: 2.125rem;
-        color: #FFFFFF;
     }
+}
+
+.page-title__title {
+    font-size: 2.125rem;
+    color: #FFFFFF;
 }
 
 /* CONTENT */
@@ -650,7 +652,7 @@ br.sp {
 
         &:nth-child(odd) {
             .section__txt {
-                padding-left: 20%;
+                padding-left: 18%;
                 right: 0;
             }
         }
@@ -659,7 +661,7 @@ br.sp {
             justify-content: flex-end;
 
             .section__txt {
-                padding-right: 20%;
+                padding-right: 18%;
                 left: 0;
             }
         }
@@ -678,7 +680,7 @@ br.sp {
     &__txt {
         width: 68%;
         min-height: 380px;
-        padding: 6%;
+        padding: 5%;
         position: absolute;
         top: 3vw;
         background: url(../images/bg01.jpg);
