@@ -6,11 +6,11 @@
 
 /* MIXIN
 ----------------------------- */
-@mixin inner() {
+@mixin inner($py) {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1200px;
     margin: auto;
-    padding: 3% 0;
+    padding: $py 2%;
 }
 
 @mixin logo-img {
@@ -76,8 +76,7 @@
 
 @mixin page-title-bg($img) {
     width: 100%;
-    position: absolute;
-    top: 80px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,6 +138,7 @@ br.sp {
     width: 100%;
     height: 80px;
     position: fixed;
+    top: 0;
     z-index: 10;
     background: #FFFFFF;
 
@@ -160,7 +160,7 @@ br.sp {
     &__img {
         width: 40px;
         height: 40px;
-        background: url(../images/logo_bk.png);
+        background: url(../images/logo_bk.png) center center no-repeat;
         background-size: contain;
     }
 
@@ -373,7 +373,7 @@ br.sp {
     background-size: cover;
 
     &__inner {
-        @include inner();
+        @include inner(0);
         padding: 3% 8% 5%;
         display: flex;
         flex-direction: column;
@@ -490,7 +490,7 @@ br.sp {
 }
 
 .section__inner {
-    @include inner();
+    @include inner(3vw);
 }
 
 .section__title {
@@ -608,7 +608,7 @@ br.sp {
     }
 }
 
-/* ROOMS
+/* SUB PAGE
 ----------------------------- */
 /* PAGE TITLE */
 .page-title {
@@ -617,6 +617,82 @@ br.sp {
     &__title {
         font-size: 2.125rem;
         color: #FFFFFF;
+    }
+}
+
+/* CONTENT */
+.section {
+    &__inner {
+        padding: 2%;
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 8%;
+
+        a {
+            @include link($text-color);
+        }
+
+        span {
+            margin: 0 5px;
+        }
+    }
+
+    &__about {
+        margin-bottom: 7%;
+        text-align: center;
+    }
+
+    &__item {
+        margin-bottom: 18%;
+        position: relative;
+
+        &:nth-child(even) {
+            .section__img {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+
+    &__img {
+        max-width: 44%;
+        min-height: 300px;
+        top: 0;
+        left: 0;
+        @include resize-img-parent(57%);
+
+        img {
+            @include resize-img-child($ex);
+        }
+    }
+
+    &__txt {
+        width: 68%;
+        min-height: 380px;
+        padding: 6% 2% 6% 20%;
+        position: absolute;
+        top: 3vw;
+        right: 0;
+        background: url(../images/bg01.jpg);
+
+        h3 {
+            margin-bottom: 6%;
+            font-size: 1.5rem;
+
+            &+ p {
+                margin-bottom: 6%;
+            }
+        }
+
+        &--caution {
+            font-size: 0.875rem;
+
+            &::before {
+                display: inline-block;
+                content: '＊';
+            }
+        }
     }
 }
 
