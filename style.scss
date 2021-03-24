@@ -612,12 +612,14 @@ br.sp {
 ----------------------------- */
 /* PAGE TITLE */
 .page-title {
+    &.rooms {
     @include page-title-bg($rooms)
-
-    &__title {
-        font-size: 2.125rem;
-        color: #FFFFFF;
     }
+}
+
+.page-title__title {
+    font-size: 2.125rem;
+    color: #FFFFFF;
 }
 
 /* CONTENT */
@@ -645,21 +647,29 @@ br.sp {
 
     &__item {
         margin-bottom: 18%;
+        display: flex;
         position: relative;
 
-        &:nth-child(even) {
-            .section__img {
+        &:nth-child(odd) {
+            .section__txt {
+                padding-left: 18%;
                 right: 0;
-                left: auto;
+            }
+        }
+
+        &:nth-child(even) {
+            justify-content: flex-end;
+
+            .section__txt {
+                padding-right: 18%;
+                left: 0;
             }
         }
     }
 
     &__img {
-        max-width: 44%;
+        width: 44%;
         min-height: 300px;
-        top: 0;
-        left: 0;
         @include resize-img-parent(57%);
 
         img {
@@ -670,10 +680,9 @@ br.sp {
     &__txt {
         width: 68%;
         min-height: 380px;
-        padding: 6% 2% 6% 20%;
+        padding: 5%;
         position: absolute;
         top: 3vw;
-        right: 0;
         background: url(../images/bg01.jpg);
 
         h3 {
