@@ -613,8 +613,16 @@ br.sp {
 /* PAGE TITLE */
 .page-title {
     &.rooms {
-    @include page-title-bg($rooms)
+        @include page-title-bg($rooms)
     }
+
+    &.dining {
+        @include page-title-bg($dining)
+    }
+
+    &.onsen {
+        @include page-title-bg($onsen)
+        }
 }
 
 .page-title__title {
@@ -652,6 +660,7 @@ br.sp {
 
         &:nth-child(odd) {
             .section__txt {
+                padding-right: 3%;
                 padding-left: 18%;
                 right: 0;
             }
@@ -680,7 +689,7 @@ br.sp {
     &__txt {
         width: 68%;
         min-height: 380px;
-        padding: 5%;
+        padding: 6%;
         position: absolute;
         top: 3vw;
         background: url(../images/bg01.jpg);
@@ -688,16 +697,13 @@ br.sp {
         h3 {
             margin-bottom: 6%;
             font-size: 1.5rem;
-
-            &+ p {
-                margin-bottom: 6%;
-            }
         }
 
         &--caution {
+            margin-top: 6%;
             font-size: 0.875rem;
 
-            &::before {
+            & p::before {
                 display: inline-block;
                 content: '＊';
             }
