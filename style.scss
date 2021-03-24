@@ -6,11 +6,11 @@
 
 /* MIXIN
 ----------------------------- */
-@mixin inner() {
+@mixin inner($py) {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1200px;
     margin: auto;
-    padding: 3% 0;
+    padding: $py 2%;
 }
 
 @mixin logo-img {
@@ -33,10 +33,10 @@
 
 @mixin link($color) {
     color: $color;
-    transition: color .5s;
+    transition: opacity .5s;
 
     &:hover {
-        opacity: .7;
+        opacity: .6;
     }
 }
 
@@ -72,6 +72,17 @@
     top: 0;
     left: 0;
     object-fit: $type;
+}
+
+@mixin page-title-bg($img) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), $img center center;
+    background-size: cover;
+    @include resize-img-parent(26%);
 }
 
 @mixin fade-in($duration) {
@@ -127,6 +138,7 @@ br.sp {
     width: 100%;
     height: 80px;
     position: fixed;
+    top: 0;
     z-index: 10;
     background: #FFFFFF;
 
@@ -148,7 +160,7 @@ br.sp {
     &__img {
         width: 40px;
         height: 40px;
-        background: url(../images/logo_bk.png);
+        background: url(../images/logo_bk.png) center center no-repeat;
         background-size: contain;
     }
 
@@ -361,7 +373,7 @@ br.sp {
     background-size: cover;
 
     &__inner {
-        @include inner();
+        @include inner(0);
         padding: 3% 8% 5%;
         display: flex;
         flex-direction: column;
@@ -478,7 +490,7 @@ br.sp {
 }
 
 .section__inner {
-    @include inner();
+    @include inner(3vw);
 }
 
 .section__title {
@@ -596,13 +608,99 @@ br.sp {
     }
 }
 
-/* ROOMS
+/* SUB PAGE
 ----------------------------- */
 /* PAGE TITLE */
 .page-title {
-    width: 100%;
-    background: url(../images/rooms.jpg);
-    @include resize-img-parent(26%)
+    @include page-title-bg($rooms)
+
+    &__title {
+        font-size: 2.125rem;
+        color: #FFFFFF;
+    }
+}
+
+/* CONTENT */
+.section {
+    &__inner {
+        padding: 2%;
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 8%;
+
+        a {
+            @include link($text-color);
+        }
+
+        span {
+            margin: 0 5px;
+        }
+    }
+
+    &__about {
+        margin-bottom: 7%;
+        text-align: center;
+    }
+
+    &__item {
+        margin-bottom: 18%;
+        display: flex;
+        position: relative;
+
+        &:nth-child(odd) {
+            .section__txt {
+                padding-left: 20%;
+                right: 0;
+            }
+        }
+
+        &:nth-child(even) {
+            justify-content: flex-end;
+
+            .section__txt {
+                padding-right: 20%;
+                left: 0;
+            }
+        }
+    }
+
+    &__img {
+        width: 44%;
+        min-height: 300px;
+        @include resize-img-parent(57%);
+
+        img {
+            @include resize-img-child($ex);
+        }
+    }
+
+    &__txt {
+        width: 68%;
+        min-height: 380px;
+        padding: 6%;
+        position: absolute;
+        top: 3vw;
+        background: url(../images/bg01.jpg);
+
+        h3 {
+            margin-bottom: 6%;
+            font-size: 1.5rem;
+
+            &+ p {
+                margin-bottom: 6%;
+            }
+        }
+
+        &--caution {
+            font-size: 0.875rem;
+
+            &::before {
+                display: inline-block;
+                content: '＊';
+            }
+        }
+    }
 }
 
 /* FOOTER
