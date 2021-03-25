@@ -13,21 +13,22 @@
     padding: $py 2%;
 }
 
-@mixin logo-img {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 10px;
+@mixin logo-img($size) {
+    width: $size;
+    height: $size;
+    margin: 0 auto 0.5vw;
     display: block;
     content: '';
     background: url(../images/logo_bk.png) no-repeat;
     background-size: contain;
 }
 
-@mixin logo-txt($color) {
-    font-size: 32px;
+@mixin logo-txt($size, $color) {
+    font-size: $size;
     font-weight: 900;
     letter-spacing: .18em;
     line-height: 48px;
+    white-space: nowrap;
     color: $color;
 }
 
@@ -128,7 +129,8 @@ ul {
 button {
     border: none;
 }
-br.sp {
+br.sp,
+br.tb {
     display: none;
 }
 
@@ -166,7 +168,7 @@ br.sp {
 
     &__title {
         margin-left: 15px;
-        @include logo-txt($text-color);
+        @include logo-txt(32px, $text-color);
     }
 
     &__nav {
@@ -187,12 +189,12 @@ br.sp {
     }
 
     .header__img {
-        background: url(../images/logo_wh.png);
+        background: url(../images/logo_wh.png) center center no-repeat;
         background-size: contain;
     }
 
     .header__title {
-        @include logo-txt(#FFFFFF);
+        @include logo-txt(32px, #FFFFFF);
     }
 
     .header__nav {
@@ -202,7 +204,6 @@ br.sp {
     }
 }
 
-
 .btn--book {
     width: 170px;
     height: 55px;
@@ -210,11 +211,11 @@ br.sp {
     position: absolute;
     right: 1%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: #FFFFFF;
     background: #978F10;
-    transition: .5s;
+    transition: background-color .3s;
 
     &:hover {
         background: lighten(#978F10, 10);
@@ -226,11 +227,18 @@ br.sp {
     }
 
     p {
+        margin-left: 10px;
         font-size: 16px;
         line-height: 1;
     }
 }
 
+.btn--hamburger {
+    display: none;
+}
+
+/* MODAL
+----------------------------- */
 .modal {
     width: 100%;
     height: 100%;
@@ -256,9 +264,9 @@ br.sp {
     }
 
     &__content {
-        width: 90%;
+        width: 95%;
         max-width: 550px;
-        padding: 2% 3% 5%;
+        padding: 30px 3% 5%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -268,7 +276,7 @@ br.sp {
     }
 
     &__title {
-        padding-bottom: 3%;
+        padding-bottom: 30px;
         font-size: 1.25rem;
         text-align: center;
         border-bottom: 1px solid #E7E7E7;
@@ -302,8 +310,6 @@ br.sp {
     }
 
     &__label {
-        margin-bottom: 15px;
-
         span {
             font-size: 0.875rem
         }
@@ -321,6 +327,7 @@ br.sp {
 /* MAIN */
 .main {
     width: 100%;
+    height: 100vh;
     @include resize-img-parent(56.2%);
     overflow: hidden;
 
@@ -475,6 +482,7 @@ br.sp {
         flex: 0 0 28%;
 
         figure {
+            min-height: 200px;
             margin-bottom: 2vw;
             @include resize-img-parent(63%);
 
@@ -495,19 +503,17 @@ br.sp {
 }
 
 .section__title {
-    margin: 10px auto 4%;
+    margin: 10px auto 60px;
     display: table;
     font-size: 2rem;
 
     &::before {
-        @include logo-img();
+        @include logo-img(40px);
     }
 }
 
 /* NEWS */
 .news {
-    padding: 0 3%;
-
     &__category {
         margin-bottom: 50px;
         display: flex;
@@ -544,8 +550,10 @@ br.sp {
         background: #F6F6F6;
 
         figure {
-            width: 100px;
-            height: 100px;
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 100px;
+            max-height: 100px;
             @include resize-img-parent(100%);
 
             img {
@@ -574,17 +582,17 @@ br.sp {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
 
-    figure {
-        width: 55%;
-        min-height: 370px;
-        @include resize-img-parent(56%);
+        figure {
+            width: 55%;
+            min-height: 370px;
+            @include resize-img-parent(56%);
 
-        img {
-            @include resize-img-child($ex);
+            img {
+                @include resize-img-child($ex);
+            }
+
         }
-
     }
 
     &__txt {
@@ -598,12 +606,14 @@ br.sp {
         }
     }
 
-    .location__map {
-        max-width: 800px;
+    &__map {
+        width: 800px;
+        height: 600px;
         margin: 0 auto 5%;
 
         iframe {
             width: 100%;
+            height: 100%;
         }
     }
 }
@@ -751,7 +761,7 @@ br.sp {
     background-size: cover;
 
     &__inner {
-        @include inner(4%);
+        @include inner(60px);
     }
 
     &__nav {
@@ -769,16 +779,16 @@ br.sp {
     }
 
     &__logo {
-        @include logo-txt(#000000);
+        @include logo-txt(32px, $text-color);
         margin-bottom: 6%;
         text-align: center;
 
         &::before {
-            @include logo-img();
+            @include logo-img(40px);
         }
     }
 
-    .footer__info {
+    &__info {
         text-align: center;
 
         span {
@@ -787,7 +797,7 @@ br.sp {
         }
     }
 
-    .footer__copyright {
+    &__copyright {
         padding: 20px;
         text-align: center;
         color: #FFFFFF;
@@ -799,9 +809,37 @@ br.sp {
     }
 }
 
-/* TABLET
+/* RESPONSIVE
 ----------------------------- */
-@media (max-width: 800px) {
+@media (max-width: 1023.98px) {
+    /* TOP
+    ----------------------------- */
+    /* MAIN */
+    .main {
+        &__slogan {
+            right: 20%;
+            font-size: 1.875rem;
+        }
+    }
+
+    /* ABOUT */
+    .about {
+        &__item {
+            flex-direction: column;
+
+            &:nth-child(even) {
+                flex-direction: column;
+            }
+        }
+
+        &__img {
+            width: 80%;
+        }
+
+        &__txt {
+            max-width: 70%;
+        }
+    }
 }
 
 /* SMARTPHONE
