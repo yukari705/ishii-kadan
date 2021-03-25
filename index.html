@@ -8,7 +8,7 @@
 
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta name="robots" content="noindex">
-            <link rel="icon" type="image/png" href="images/logo02.png">
+            <link rel="icon" type="image/png" href="images/logo_bk.png">
 
         <!-- CSS -->
             <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -23,17 +23,17 @@
 
     <body>
         <!-- HEADER -->
-        <header id="js-header" class="header header--transparent">
+        <header id="js-top-header" class="header header--transparent">
             <div class="header__inner">
-                <a href="#" class="header__logo" id="js-header-logo">
+                <a href="#" class="header__logo" id="js-top-header-logo">
                     <div class="header__img"></div>
                     <h1 class="header__title">石井花壇</h1>
                 </a><!-- /.header__logo -->
                 <nav>
                     <ul class="header__nav">
-                        <li><a href="">お部屋</a></li>
-                        <li><a href="">お料理</a></li>
-                        <li><a href="">温泉</a></li>
+                        <li><a href="rooms.html">お部屋</a></li>
+                        <li><a href="dining.html">お料理</a></li>
+                        <li><a href="onsen.html">温泉</a></li>
                     </ul><!-- /.header__nav -->
                 </nav>
                 <button class="btn--book" id="js-btn-book">
@@ -184,7 +184,8 @@
                     <li class="js-news-category" data-id="other">その他</li>
                 </ul>
 
-                <ul class="news__list js-news-list fade-in is-active" id="business">
+                <div class="fade-in">
+                <ul class="news__list js-news-list is-active" id="business">
                     <li class="news__item">
                         <figure><img src="images/news01.jpg" alt=""></figure>
                         <div class="news__title">
@@ -228,8 +229,9 @@
                         </div>
                     </li><!-- /.news__item -->
                 </ul><!-- /.news__list -->
+                </div>
 
-                <ul class="news__list js-news-list fade-in" id="other">
+                <ul class="news__list js-news-list" id="other">
                     <li class="news__item">
                         <figure><img src="images/news02.jpg" alt=""></figure>
                         <div class="news__title">
@@ -302,12 +304,12 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="section__inner">
+            <div class="footer__inner">
                 <nav class="footer__nav">
                     <ul>
-                        <li class="fade-up"><a href="">お部屋</a></li>
-                        <li class="fade-up"><a href="">お料理</a></li>
-                        <li class="fade-up"><a href="">温泉</a></li>
+                        <li class="fade-up"><a href="rooms.html">お部屋</a></li>
+                        <li class="fade-up"><a href="dining.html">お料理</a></li>
+                        <li class="fade-up"><a href="onsen.html">温泉</a></li>
                     </ul>
                 </nav><!-- /.footer__nav -->
                 <p class="footer__logo fade-in">石井花壇</p>
@@ -317,7 +319,7 @@
                 <p class="footer__info fade-in">
                     TEL.000-0000-0000<span></span>FAX.00-0000-0000
                 </p>
-            </div><!-- /.section__inner -->
+            </div><!-- /.footer__inner -->
             <p class="footer__copyright"><small>
                 Copyright &copy; 石井花壇 All Rights Reserved.
             </small></p>

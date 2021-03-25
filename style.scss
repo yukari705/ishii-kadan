@@ -86,7 +86,7 @@
 }
 
 @mixin fade-in($duration) {
-    animation-name: fade-in $duration ease;
+    animation: fade-in $duration ease;
 }
 
 @keyframes fade-in {
@@ -429,6 +429,7 @@ br.sp {
 
     &__img {
         width: 55%;
+        min-height: 570px;
         @include resize-img-parent(52%);
 
         img {
@@ -565,12 +566,11 @@ br.sp {
 
 /* location */
 .location {
-    padding: 0 3%;
     background: url(../images/bg01.jpg) repeat;
     background-size: cover;
 
     &__info {
-        margin: 6% auto;
+        margin: 7% auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -578,7 +578,7 @@ br.sp {
 
     figure {
         width: 55%;
-        float: left;
+        min-height: 370px;
         @include resize-img-parent(56%);
 
         img {
@@ -600,7 +600,7 @@ br.sp {
 
     .location__map {
         max-width: 800px;
-        margin: 0 auto 3%;
+        margin: 0 auto 5%;
 
         iframe {
             width: 100%;
@@ -749,6 +749,10 @@ br.sp {
 .footer {
     background: url(../images/bg03.jpg) center center no-repeat;
     background-size: cover;
+
+    &__inner {
+        @include inner(4%);
+    }
 
     &__nav {
         margin: auto;
