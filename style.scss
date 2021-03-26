@@ -45,6 +45,7 @@
     width: fit-content;
     min-width: 200px;
     padding: $py 45px;
+    display: table;
     color: $text-color;
     text-align: center;
     border: 1px solid #707070;
@@ -315,7 +316,6 @@ br.pc {
 
     .btn--submit {
         @include btn(10px);
-        display: table;
         margin: auto;
 
         &:disabled {
@@ -417,8 +417,8 @@ br.pc {
     }
 }
 
-/* ABOUT */
-.about {
+/* FEATURES */
+.features {
     padding: 100px 0 80px;
 
     &__item {
@@ -426,7 +426,7 @@ br.pc {
         display: flex;
 
         &:nth-child(odd) {
-            .about__txt {
+            .features__txt {
             margin-right: auto;
             padding-left: 7%;
             }
@@ -435,7 +435,7 @@ br.pc {
         &:nth-child(even) {
             flex-direction: row-reverse;
 
-            .about__txt {
+            .features__txt {
                 margin-left: auto;
                 padding-right: 7%;
             }
@@ -455,8 +455,6 @@ br.pc {
     &__txt {
         max-width: 45%;
         padding: 30px 3%;
-        display: flex;
-        flex-direction: column;
 
         h2 {
             margin-bottom: 3.5vw;
@@ -903,15 +901,16 @@ br.pc {
         }
     }
 
-    /* ABOUT */
-    .about {
-        padding-bottom: 30px;
+    /* FEATURES */
+    .features {
+        padding: 50px 0 30px;
 
         &__item {
+            margin-bottom: 10%;
             flex-direction: column;
 
             &:nth-child(odd) {
-                .about__txt {
+                .features__txt {
                 padding: 3% 10%;
                 }
             }
@@ -919,11 +918,11 @@ br.pc {
             &:nth-child(even) {
                 flex-direction: column;
 
-                .about__img {
+                .features__img {
                     margin-left: auto;
                 }
 
-                .about__txt {
+                .features__txt {
                     padding: 3% 10%;
                 }
             }
@@ -935,7 +934,7 @@ br.pc {
         }
 
         &__txt {
-            width: 100%;
+            max-width: 100%;
 
             h2 {
                 font-size: 1.875rem;
@@ -1261,16 +1260,13 @@ br.pc {
         }
     }
 
-    /* ABOUT */
-    .about {
+    /* FEATURES */
+    .features {
         &__img {
-            width: 90%;
             min-height: 250px;
         }
 
         &__txt {
-            max-width: 100%;
-
             h2 {
                 font-size: 1.5rem;
             }
