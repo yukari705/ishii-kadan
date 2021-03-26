@@ -50,39 +50,39 @@
             <div class="modal__bg" id="js-modal-bg"></div>
             <div class="modal__content">
                 <h2 class="modal__title">宿泊予約</h2>
-                <form class="form" action="#">
+                <form class="form" id="js-form" action="#">
                     <div class="form__item">
                         <label class="form__label">
-                            お名前<input type="text" name="" placeholder="例：石井正悟" required>
+                            お名前<input type="text" name="your-name" placeholder="例：石井正悟" required>
                         </label>
-                    </div>
+                    </div><!-- /.form__item -->
                     <div class="form__item">
                         <label class="form__label">
-                            メールアドレス<input type="text" name="" placeholder="例：Example@example.com" required>
+                            メールアドレス<input type="email" name="your-email" placeholder="例：Example@example.com" required>
                         </label>
-                    </div>
+                    </div><!-- /.form__item -->
                     <div class="form__item">
                         <label class="form__label">ご希望プラン<span>（空いているプランのみ表示されます）</span>
                             <div class="form__select">
-                                <select name="subject">
+                                <select name="plan">
                                     <option value="none">プランを選択してください</option>
                                     <option value="01limited">①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
                                     <option value="02weekday">②平日に優雅に楽しむ、特別宿泊プラン</option>
                                     <option value="03family">③絶景貸切露天と個室会席を満喫できるファミリープラン</option>
                                 </select>
-                            </div>
+                            </div><!-- /.form__select -->
                         </label>
-                    </div>
+                    </div><!-- /.form__item -->
                     <div class="form__item">
                         <label class="form__label">
-                            日時選択<input id="flatpickr" type="text" name="" placeholder="日時を選択してください" required>
+                            日時選択<input id="flatpickr" type="text" name="date" placeholder="日時を選択してください" required>
                         </label>
-                    </div>
+                    </div><!-- /.form__item -->
                     <input class="btn--submit" type="submit" value="送信する" id="js-submit" disabled>
                 </form>
                 <button class="modal__close" id="js-modal-close"><img src="images/close.png" alt="予約画面を閉じる"></button>
-            </div>
-        </div>
+            </div><!-- /.modal__content -->
+        </div><!-- /.modal -->
 
         <!-- MAIN -->
         <section id="main" class="main">
