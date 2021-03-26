@@ -8,6 +8,15 @@ $(function() {
         interval: 300
     };
 
+    var fadeInDelay = {
+        duration: 1000,
+        easing: 'linear',
+        viewFactor: 0.5,
+        interval: 300,
+        delay: 600,
+        interval: 300
+    };
+
     var fadeUp = {
         distance: '20px',
         duration: 1000,
@@ -26,6 +35,7 @@ $(function() {
     };
 
     ScrollReveal().reveal('.fade-in', fadeIn);
+    ScrollReveal().reveal('.fade-in-delay', fadeInDelay);
     ScrollReveal().reveal('.fade-up', fadeUp);
     ScrollReveal().reveal('.fade-up-delay', fadeUpDelay);
 
