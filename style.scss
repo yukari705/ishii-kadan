@@ -389,7 +389,7 @@ br.pc {
 
     &__inner {
         @include inner(0);
-        padding: 3% 8% 5%;
+        padding: 3% 150px 5%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -399,7 +399,7 @@ br.pc {
     }
 
     h2 {
-        margin-top: 4.5rem;
+        margin-top: 4.5rem; //equal to indent
         font-size: 1.75rem;
         letter-spacing: 0.6rem;
         text-indent: -4.5rem;
@@ -409,7 +409,7 @@ br.pc {
         margin-top: 4.5rem;
         letter-spacing: 0.4rem;
 
-        &:last-child {
+        &:last-child { //ryokan's name 石井花壇
             margin-bottom: 5%;
             text-align: right;
             font-size: 1.375rem;
@@ -897,7 +897,9 @@ br.pc {
     /* MESSAGE */
     .message {
         &__inner {
-            max-width: 600px;
+            max-width: 800px;
+            padding-left: 100px;
+            padding-right: 100px;
         }
     }
 
@@ -1238,21 +1240,22 @@ br.pc {
     /* MESSAGE */
     .message {
         &__inner {
+            max-width: 500px;
             padding: 3%;
-            writing-mode: inherit;
+            writing-mode: inherit; //horizontal
             text-align: justify;
         }
 
         h2 {
             margin-top: 0;
-            margin-left: 6rem;
+            margin-left: 4.5rem; //equal to indent
             font-size: 1.25rem;
         }
 
         p {
             margin-top: 5%;
 
-            &:last-child {
+            &:last-child { //ryokan's name 石井花壇
                 font-size: 1.125rem;
             }
         }
